@@ -1,6 +1,8 @@
 <template>
   <q-page padding>
-    <p class="text-h6">
+    <div style="padding-top:25%;">
+
+    </div>
       <q-form class="row justify-center">
         <p class="col-12 text-h5 text-center">Login</p>
         <div class="col-md-4 col-sm-6 col-xs-10 q-gutter-y-md">
@@ -11,23 +13,23 @@
           rounded
           />
           <q-input
-          label="Password"
+          label="Senha"
           v-model="form.password"
           outlined
           rounded
+          type="password"
           />
-          <div class="full width q-pt-md">
+          <div class="column items-center justify-center full-width q-pt-md">
             <q-btn
               label="Login"
               color="primary"
-              class="full-width"
+              class="items-right"
               rounded
-              size="lg"
+              size="md"
               type="submit"/>
           </div>
         </div>
       </q-form>
-    </p>
   </q-page>
 </template>
 
