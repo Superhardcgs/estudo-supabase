@@ -27,17 +27,17 @@ export default function useAuthUser () {
     return !!user.value
   }
 
-  // const register = async ({ email, password, ...meta }) => {
-  //   const { user, error } = await supabase.auth.signUp(
-  //     { email, password },
-  //     {
-  //       data: meta,
-  //       redirectTo: `${Window.location.origin}/me?fromEmail=registrationConfirmation`
-  //     }
-  //   )
-  //   if (error) throw error
-  //   return user
-  // }
+  const register = async ({ name, email, password, ...meta }) => {
+    const { user, error } = await supabase.auth.signUp(
+      { name, email, password },
+      {
+        data: meta,
+        redirectTo: `${Window.location.origin}/me?fromEmail=registrationConfirmation`
+      }
+    )
+    if (error) throw error
+    return user
+  }
 
   const update = async (data) => {
     const { user, error } = await supabase.auth.update(data)
@@ -56,6 +56,7 @@ export default function useAuthUser () {
     login,
     loginWithSocialProvider,
     logout,
+    register,
     isLoggedIn,
     update,
     sendPasswordRestEmail
