@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import useSupabase from 'src/boot/supabase'
+import useSupabase from 'boot/supabase'
 
 const user = ref(null)
 
@@ -27,12 +27,12 @@ export default function useAuthUser () {
     return !!user.value
   }
 
-  const register = async ({ name, email, password, ...meta }) => {
+  const register = async ({ email, password, ...meta }) => {
     const { user, error } = await supabase.auth.signUp(
-      { name, email, password },
+      { email, password },
       {
         data: meta,
-        redirectTo: `${Window.location.origin}/me?fromEmail=registrationConfirmation`
+        redirectTo: `${window.location.origin}/me?fromEmail=registrationConfirmation`
       }
     )
     if (error) throw error
@@ -56,8 +56,8 @@ export default function useAuthUser () {
     login,
     loginWithSocialProvider,
     logout,
-    register,
     isLoggedIn,
+    register,
     update,
     sendPasswordRestEmail
   }
