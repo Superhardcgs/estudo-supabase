@@ -28,6 +28,7 @@
             color="primary"
             class="items-right"
             rounded
+            icon-right="send"
             size="lg"
             type="submit"/>
           </div>
@@ -39,6 +40,15 @@
             flat
             size="md"
             to="/register"/>
+            <br>
+            <q-btn
+            label="Esqueci a Senha"
+            color="gray"
+            class="items-left"
+            flat
+            size="md"
+            to="/passwordRecovery"
+            />
           </div>
         </div>
       </q-form>

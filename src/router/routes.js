@@ -7,18 +7,17 @@ const routes = [
       { path: '', name: 'loginDefault', component: () => import('pages/Login.vue') },
       { path: 'login', name: 'login', component: () => import('pages/Login.vue') },
       { path: 'register', name: 'register', component: () => import('pages/Register.vue') },
-      { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmation.vue') },
-      { path: 'me', name: 'me', component: () => import('pages/Me.vue') }
+      { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmation.vue') }
     ]
   },
   {
-    path: '/tst',
+    path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: 'me', name: 'me', component: () => import('pages/Me.vue') }
+
     ]
   },
-
   // Always leave this as last one,
   // but you can also remove it
   {
