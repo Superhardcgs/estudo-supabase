@@ -4,8 +4,9 @@
       Obrigado por se registar em nossa loja virtual!
     </p>
     <p class="text-body1">
-      Por favor, confirme o registro da sua conta através do email: <strong>{{ $route.query.email }}</strong>
+      Em instantes, enviaremos um e-mail solicitando a confirmação da conta criada através de: <strong>{{ $route.query.email }}</strong>
     </p>
+    <p>Solicitamos que verifique o email para que possa continuar.</p>
   </q-page>
 </template>
 
