@@ -15,7 +15,28 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn-dropdown
+          dropdown-icon="person"
+          flat
+        >
+          <div class="q-pa-md">
+            <div class="column items-center">
+              <q-avatar size="72px">
+                <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+              </q-avatar>
+
+              <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
+
+              <q-btn
+                color="primary"
+                label="Logout"
+                push
+                size="sm"
+                v-close-popup
+              />
+            </div>
+          </div>
+        </q-btn-dropdown>
       </q-toolbar>
     </q-header>
 
@@ -86,10 +107,11 @@ const linksList = [
     link: 'https://facebook.quasar.dev'
   },
   {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'Minha Conta',
+    caption: 'Preferências da Conta',
+    icon: 'person',
+    link: '/me',
+    target: '_self'
   }
 ]
 
