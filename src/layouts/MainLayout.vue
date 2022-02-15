@@ -25,14 +25,15 @@
                 <img src="https://cdn.quasar.dev/img/boy-avatar.png">
               </q-avatar>
 
-              <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
+              <div class="text-subtitle1 q-mt-md q-mb-xs">{{ user.user_metadata.name }}</div>
 
               <q-btn
                 color="primary"
-                label="Logout"
+                label="Sair"
                 push
                 size="sm"
                 v-close-popup
+                @click="handleLogout"
               />
             </div>
           </div>
@@ -116,6 +117,9 @@ const linksList = [
 ]
 
 import { defineComponent, ref } from 'vue'
+import useAuthUser from 'src/composables/UseAuthUser'
+import { useRouter } from 'vue-router'
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -125,14 +129,38 @@ export default defineComponent({
   },
 
   setup () {
+    const { user } = useAuthUser()
+
     const leftDrawerOpen = ref(false)
+
+    const $q = useQuasar()
+
+    const router = useRouter()
+
+    const { logout } = useAuthUser()
+
+    const handleLogout = async () => {
+      $q.dialog({
+        title: 'Sair',
+        message: 'Você tem certeza de que quer sair?',
+        cancel: true,
+        persistent: true
+      }).onOk(async () => {
+        await logout()
+        router.replace({ name: 'login' })
+      })
+
+      await logout()
+    }
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
+      user,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      handleLogout
     }
   }
 })
