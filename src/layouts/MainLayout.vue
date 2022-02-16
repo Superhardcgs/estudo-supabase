@@ -21,11 +21,15 @@
         >
           <div class="q-pa-md">
             <div class="column items-center">
-              <q-avatar size="72px">
-                <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-              </q-avatar>
+                <a href="/me" target="_self">
+                  <q-avatar size="72px">
+                    <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                  </q-avatar>
+                </a>
 
               <div class="text-subtitle1 q-mt-md q-mb-xs">{{ user.user_metadata.name }}</div>
+
+              <br/>
 
               <q-btn
                 color="primary"
@@ -149,8 +153,6 @@ export default defineComponent({
         await logout()
         router.replace({ name: 'login' })
       })
-
-      await logout()
     }
 
     return {
