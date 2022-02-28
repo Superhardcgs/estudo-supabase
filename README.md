@@ -1,4 +1,4 @@
-## For dependencies:
+<span>## For dependencies:
 ## npm install
 
 ## For quasar dependencies (if still doesn't work)
@@ -6,3 +6,4 @@
 
 ## Running projects
 ## quasar dev
+</span>
