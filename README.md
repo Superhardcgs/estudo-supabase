@@ -1,9 +1,8 @@
-<span>## For dependencies:
-## npm install
+<span>## For dependencies:</span>
+<span>## npm install</span>
 
-## For quasar dependencies (if still doesn't work)
-## npm install quasar-cli
+<span>## For quasar dependencies (if still doesn't work)</span>
+<span>## npm install quasar-cli</span>
 
-## Running projects
-## quasar dev
-</span>
+<span>## Running projects</span>
+<span>## quasar dev</span>
